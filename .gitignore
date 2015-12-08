@@ -1,3 +1,14 @@
+*.sdf
+*.opendb
+*.opensdf
+*.aps
+*.suo
+*.user
+Debug
+Release
+GeneratedFiles
+.vs
+
 # Compiled Object files
 *.slo
 *.lo
@@ -26,4 +37,11 @@
 *.exe
 *.out
 *.app
-/msvc/GeneratedFiles
+msvc/GeneratedFiles
+msvc/*.user
+
+Debug_x64
+Debug_Win32
+tmp
+
+*.suo
