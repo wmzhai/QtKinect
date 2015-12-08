@@ -16,6 +16,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtKinect", "QtKinect.vcxproj", "{A1FA2CCC-DEF0-4FF3-82F0-EEDFF1A6523B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestQtKinect", "TestQtKinect.vcxproj", "{CD154329-1BC9-4A36-AADD-11B542A0A728}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1FA2CCC-DEF0-4FF3-82F0-EEDFF1A6523B} = {A1FA2CCC-DEF0-4FF3-82F0-EEDFF1A6523B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtKinectLoad", "QtKinectLoad.vcxproj", "{7730029D-DB43-47E4-AD9A-8A403281758D}"
 EndProject
