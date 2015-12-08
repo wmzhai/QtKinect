@@ -1,5 +1,4 @@
-#ifndef __Q_KINECT_STREAM_H__
-#define __Q_KINECT_STREAM_H__
+#pragma once
 
 #include <QObject>
 #include "QKinectGrabber.h"
@@ -48,10 +47,5 @@ private:
 	std::vector<unsigned short> depthBufferStream;
 	unsigned int				maxSizeInMegaBytes;
 };
-
-
-
-
-#endif	//__Q_KINECT_STREAM_H__
 
 

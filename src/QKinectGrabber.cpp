@@ -30,12 +30,10 @@ QKinectGrabber::~QKinectGrabber()
 	stop();
 }
 
-
 void QKinectGrabber::enableImageSending(bool value)
 {
 	emitImageEnabled = value;
 }
-
 
 void QKinectGrabber::copyFrameBuffer(KinectFrameBuffer& frame)
 {

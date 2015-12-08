@@ -1,8 +1,4 @@
-
-
-#ifndef __KINECT_GRABBER_H__
-#define __KINECT_GRABBER_H__
-
+#pragma once
 
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
@@ -156,25 +152,16 @@ protected:
 	void run() Q_DECL_OVERRIDE;
 
 private:
-
 	bool initializeSensor();
 	bool updateColor();
 	bool updateDepth();
 	bool updateInfrared(QImage& infraredImage);
 	void uninitializeSensor();
-
 	
-	IKinectSensor*				m_pKinectSensor;		// Current Kinect
-
-	
-	IColorFrameReader*			m_pColorFrameReader;	// Color reader
-
-	
-	IDepthFrameReader*			m_pDepthFrameReader;	// Depth reader
-
-	
+	IKinectSensor*				m_pKinectSensor;		// Current Kinect	
+	IColorFrameReader*			m_pColorFrameReader;	// Color reader	
+	IDepthFrameReader*			m_pDepthFrameReader;	// Depth reader	
 	IInfraredFrameReader*		m_pInfraredFrameReader;	// Infrared reader
-
 
 	unsigned short				colorFrameWidth;		// = 1920;
 	unsigned short				colorFrameHeight;		// = 1080;
@@ -200,5 +187,3 @@ private:
 
 
 
-
-#endif	//__KINECT_GRABBER_H__

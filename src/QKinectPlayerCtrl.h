@@ -1,7 +1,4 @@
-
-
-#ifndef __Q_KINECT_PLAYER_CTRL_H__
-#define __Q_KINECT_PLAYER_CTRL_H__
+#pragma once
 
 #include <QObject>
 #include "QKinectGrabber.h"
@@ -69,7 +66,3 @@ public:
 	DepthBuffer				mDepthBuffer;
 };
 
-
-
-
-#endif	//__Q_KINECT_PLAYER_CTRL_H__
