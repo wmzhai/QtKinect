@@ -1,7 +1,4 @@
-
-
 #include <strsafe.h>
-
 #include "QKinectGrabber.h"
 #include <QtWidgets>
 #include <iostream>

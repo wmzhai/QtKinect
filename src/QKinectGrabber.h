@@ -4,17 +4,12 @@
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 #endif
 
-
 // Windows Header Files
 #include <windows.h>
 
-
 // Kinect Header files
 #include <Kinect.h>
-
-
 #include <Shlobj.h>
-
 
 #ifdef _UNICODE
 #if defined _M_IX86
@@ -37,7 +32,6 @@ inline void SafeRelease(Interface *& pInterfaceToRelease)
 	}
 }
 
-
 #include <QMutex>
 #include <QSize>
 #include <QThread>
@@ -47,6 +41,10 @@ inline void SafeRelease(Interface *& pInterfaceToRelease)
 
 struct KinectFrameBuffer
 {
+	std::vector<unsigned short> info; // Frame Information
+	std::vector<unsigned char> color; // ColorFrame Data Buffer
+	std::vector<unsigned short> depth; // DepthFrame Data Buffer
+
 	// info : [0] color_width
 	// info : [1] color_height
 	// info : [2] color_channels
@@ -69,18 +67,11 @@ struct KinectFrameBuffer
 	{
 		reset();
 	}
+
 	KinectFrameBuffer(const std::vector<unsigned short>& _info,
 		const std::vector<unsigned char>& _color,
 		const std::vector<unsigned short>& _depth) :
 		info(_info), color(_color), depth(_depth){}
-
-
-	void clear()
-	{
-		info.clear();
-		color.clear();
-		depth.clear();
-	}
 
 	void reset()
 	{
@@ -89,16 +80,19 @@ struct KinectFrameBuffer
 		depth.resize(512 * 424, 0);
 	}
 
+	void clear()
+	{
+		info.clear();
+		color.clear();
+		depth.clear();
+	}
+
 	unsigned short color_width() const { return info[ColorWidth]; }
 	unsigned short color_height() const { return info[ColorHeight]; }
 	unsigned short depth_width() const { return info[DepthWidth]; }
 	unsigned short depth_height() const { return info[DepthHeight]; }
 	unsigned short depth_min_distance() const { return info[DepthMinDistance]; }
 	unsigned short depth_max_distance() const { return info[DepthMaxDistance]; }
-
-	std::vector<unsigned short> info;
-	std::vector<unsigned char> color;
-	std::vector<unsigned short> depth;
 };
 
 class QKinectGrabber : public QThread
